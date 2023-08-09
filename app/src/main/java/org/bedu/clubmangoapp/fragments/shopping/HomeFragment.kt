@@ -23,7 +23,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater)
         return binding.root
     }
@@ -41,6 +41,8 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         )
 
+        binding.viewpagerHome.isUserInputEnabled = false
+
         val viewPager2Adapter =
             HomeViewpagerAdapter(categoriesFragments, childFragmentManager, lifecycle)
         binding.viewpagerHome.adapter = viewPager2Adapter
@@ -49,8 +51,8 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 0 -> tap.text = "Main"
                 1 -> tap.text = "Pulsos"
                 2 -> tap.text = "Anillos"
-                3 -> tap.text = "Cadenas"
-                4 -> tap.text = "Aretes"
+                3 -> tap.text = "Aretes"
+                4 -> tap.text = "Collares"
                 5 -> tap.text = "Dijes"
 
             }
